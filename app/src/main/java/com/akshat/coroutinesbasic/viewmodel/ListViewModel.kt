@@ -11,7 +11,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class ListViewModel: ViewModel() {
-    val countriesService = CountriesService.getCountiresServoce()
+  //  val countriesService = CountriesService.getCountiresServoce()
     val job: Job?= null
     val countries = MutableLiveData<List<Country>>()
     val countryLoadError = MutableLiveData<String?>()
@@ -24,7 +24,7 @@ class ListViewModel: ViewModel() {
     private fun fetchCountries() {
         loading.value = true
 
-        CoroutineScope(Dispatchers.IO).launch {
+        /*CoroutineScope(Dispatchers.IO).launch {
             val response = countriesService.getCountries()
             withContext(Dispatchers.Main){
                 if (response.isSuccessful){
@@ -36,7 +36,7 @@ class ListViewModel: ViewModel() {
                     onError("Error ${response.message()}")
                 }
             }
-        }
+        }*/
     }
 
 
